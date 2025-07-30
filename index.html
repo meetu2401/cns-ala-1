@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CryptoLock Messenger</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsencrypt/3.0.0/jsencrypt.min.js"></script>
+</head>
+<body>
+  <div class="bg-circles">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="container">
+    <h1>CryptoLock Messenger</h1>
+
+    <label>Enter Message:</label>
+    <textarea id="message" placeholder="Type your secret message here..."></textarea>
+    <button onclick="encryptMessage()">Encrypt & Send</button>
+
+    <div class="output">
+      <h3>Encrypted AES Key (RSA Encrypted):</h3>
+      <div id="rsaKeyOutput"></div>
+
+      <h3>Encrypted Message (AES Encrypted):</h3>
+      <div id="aesMsgOutput"></div>
+    </div>
+
+    <hr />
+
+    <label>Paste Encrypted AES Key:</label>
+    <textarea id="encryptedKey"></textarea>
+
+    <label>Paste Encrypted Message:</label>
+    <textarea id="encryptedMsg"></textarea>
+
+    <button onclick="decryptMessage()">Decrypt</button>
+
+    <div class="output">
+      <h3>Decrypted Message:</h3>
+      <div id="decryptedOutput"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
